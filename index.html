@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<style>
+    * {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+</style>
+<body>
+    <div id="container"></div>
+</body>
+<script>
+    window.RufflePlayer = window.RufflePlayer || {};
+
+    window.addEventListener("DOMContentLoaded", () => {
+        let ruffle = window.RufflePlayer.newest();
+        let player = ruffle.createPlayer();
+        let container = document.getElementById("container");
+        container.appendChild(player);
+        player.ruffle().load("bleach-vs-naruto-v2-4.swf");
+    });
+</script>
+</html>
